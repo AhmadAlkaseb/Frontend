@@ -55,3 +55,43 @@ console.log(myString.length);
 console.log(myString.substring(0,5)); //Inklusiv 0 og ekslusiv 5.
 console.log(myString.replace("Hello", "Hi"));
 console.log(myString.indexOf("world"));
+
+const newArr = ["Ahmad", "Jane", "Jack"];
+for(let i = 0; i < newArr.length; i++){
+    console.log(newArr[i])
+}
+
+newArr.forEach(function (name) {
+    console.log(name);
+});
+
+newArr.forEach( (name, index)  => {
+    console.log(name, index);
+});
+
+const newArrNew = newArr.map((name) => { // Arrow functions ikke lambda functions. 
+    //Tager et callback, altså en function ind som parameter 
+    return name + " Doe";
+});
+console.log(newArrNew);
+
+const obj = {name: "John Doe", age: 12, isStudent: true, friends:["Jacne","jacl"], mother: {name: "ajsdasd", age:40}};
+for(const key in obj){ // in opperator når vi bruger et object, og of når vi løber et array igennem i forhold til arrayets elementer.
+    console.log(key,obj[key]);
+}
+
+for (const pop of newArr){
+    console.log(pop);
+}
+
+// Descructing, kan bruges til arrays og objekter
+const {name : fullNamee, age} = obj;
+console.log(fullNamee,age);
+console.log("");
+const [first,second, ...rest] = newArr;
+console.log(first,second,rest);
+
+// ...rest hedder spread operator
+
+const obj2 = {...obj,name: "Ahmad A", age: 42}; // Vi overskrider de nuværende værdier for name og age.
+console.log(obj2); 
