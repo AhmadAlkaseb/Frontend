@@ -202,3 +202,28 @@ document.getElementById('filterButton').addEventListener('click', function() {
 
     updateTable(filteredCars);
 });
+
+// Task 1.7
+document.getElementById('buttons').addEventListener('click', function(event) {
+    const display = document.getElementById('display');
+    const buttonText = event.target.innerText;
+
+    if (buttonText !== '=' && buttonText !== 'C') { 
+        display.innerText += buttonText;
+    }
+});
+
+document.getElementById('calculate').addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevent click event from bubbling up
+
+    const display = document.getElementById('display');
+    const expression = display.innerText;
+
+    // Evaluate the expression and update the display
+    display.innerText = eval(expression);
+});
+
+document.getElementById('reset').addEventListener('click', function() {
+    const display = document.getElementById('display');
+    display.innerText = ''; // Clear the display
+});
