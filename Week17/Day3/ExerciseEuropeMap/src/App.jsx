@@ -1,52 +1,55 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-
-function Map() {
-  useEffect(() => {
-    const handleCountryClick = (event) => {
-      if (event.target.classList.contains('country')) {
-        const countryCode = event.target.getAttribute('countrycode');
-        fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
-          .then(response => response.json())
-          .then(data => {
-            console.log(data);
-          })
-      }
-    };
-    const map = document.getElementById('map');
-    map.addEventListener('click', handleCountryClick);
-    return () => {
-      map.removeEventListener('click', handleCountryClick);
-    };
-  }, []);
-
-  return (
-    <div id="map">
-      <div className="country" countrycode="dk">Denmark</div>
-      <div className="country" countrycode="de">Germany</div>
-      <div className="country" countrycode="fr">France</div>
-    </div>
-  );
-}
-
-function fetchDataById(id) {
-  const url = `https://restcountries.com/v3.1/alpha/${id}`;
-  fetch(url)
-    .then(response => response.json())
-    .then(data => updateGUI(data));
-}
-
-function updateGUI(data) {
-  console.log(data);
-}
+import SvgMap from './SvgMap';
 
 function App() {
-    fetchDataById("dk");
+  const [countryElement, setCountryElement] = useState(null); // Descructing function
+  const [countryDetails, setCountryDetails] = useState(null);
+  
+  function clickHandler(event){
+  if (countryElement != null){
+  countryElement.style.fill = "#c0c0c0";
+  }
+  console.log(event.target)
+  setCountryElement(event.target)
+  event.target.style.fill = "red";
+  }
+
+  useEffect(() => {
+    if (countryElement !== null) {
+      fetch('https://restcountries.com/v3.1/alpha/' + countryElement.id)
+        .then(response => response.json())
+        .then((data) => {
+          const countryObject = {
+            name: data[0].name.common,
+            area: data[0].area,
+            population: data[0].population
+          }
+          setCountryDetails(countryObject);
+        })
+        .catch(error => {
+          console.error('Error fetching country data:', error);
+          setCountryDetails(null); // Reset countryDetails on error
+        });
+    }
+  }, [countryElement]);
+
+
   return (
-    <>
-      <h3>Click on a country's name to get information</h3>
-      <Map />
-    </>
+    <div>
+      <h1>Country information: </h1>
+      {countryDetails && (
+        <div>
+              <p>ID: {countryElement.id}</p>
+              <p>Name: {countryDetails.name}</p>
+              <p>Population: {countryDetails.population}</p>
+              <p>Area: {countryDetails.area}</p>
+        </div>
+      )}
+      <div onClick={clickHandler}>
+        <SvgMap />
+      </div>
+    </div>
   );
 }
 export default App;
