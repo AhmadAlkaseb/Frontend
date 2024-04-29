@@ -1,19 +1,22 @@
 // Hele filen hedder et modul
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Fragment } from 'react'
+import React, { useState } from 'react'; 
 import './App.css'
 import PersonViewer from './components/PersonViewer'
+import TodoList from './components/TodoList'
+import TodoForm from './components/TodoForm'
 
 function App() {
-  
+  const [todo, setTodo] = useState({title: '', userId: ''});
+  const [todos, setTodos] = useState([]);
+
   return (
-    <>  //Fragment
+    <>  
+    <TodoForm todo={todo} setTodo={setTodo} setTodos={setTodos} todos={todos}/> 
+    <TodoList todos={todos} setTodos={setTodos}/>
+    <hr />
     <h1>Test</h1>
     <PersonViewer name="Ahmad" age= {9}/>
-    <PersonViewer name="Hanni" age= {13}/>
-    <PersonViewer name="Youssef" age= {17}/>
-    <PersonViewer name="Lasse" age= {21}/>
     </>
   )
 }

@@ -22,18 +22,17 @@ return (
     <button onClick={()=>setNameState('Dorthe nielsen')}>
         Set name
         </button>
-
-    {users.map((user,index) => (
-            <>
-            <div><h1>id: {user.id}</h1></div>
-            <ShowName name = {user.name} />
-            <div>email: {user.email}</div>
-            </>
+    {users && users.map((user) => (
+            <div key = {user.id}>
+            <h1>id: {user.id}</h1>
+            {user.name && <ShowName name = {user.name} />}
+            {user.email && <h1>email: {user.email}</h1>}
+            </div>
         ))}
     </>
     )
 }
 
-const ShowName = ({name}) => <>name: {name}</>
+const ShowName = ({name}) => <h1>name: {name}</h1>
 
 export default PersonViewer;
