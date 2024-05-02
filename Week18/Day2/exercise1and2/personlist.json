@@ -1,25 +1,11 @@
 {
   "persons": [
     {
-      "id": "9",
-      "age": "440",
-      "fullname": "Madie Stokes",
-      "gender": "Male",
-      "email": "Dockll.Rodriguez@Jillian.com"
-    },
-    {
       "id": "10",
       "age": 30,
       "fullname": "Brisa Sawayn",
-      "gender": "Man",
+      "gender": "Nonbinary",
       "email": "Wendell.Legros@Celestine.ca"
-    },
-    {
-      "id": "11",
-      "age": 76,
-      "fullname": "Lance Dietrich",
-      "gender": "Man",
-      "email": "Rutherford.Winifred@Schneider.us"
     },
     {
       "id": "12",

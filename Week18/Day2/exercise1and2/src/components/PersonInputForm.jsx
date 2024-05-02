@@ -27,18 +27,18 @@ const PersonInputForm = ({updated, setUpdated, person, setPerson}) => {
     };
 
     return (
-        <div className="container">
+        <div>
             <h3>Upload new person</h3>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
+                <div>
                     <label htmlFor="age">Age:</label>
                     <input type="number" className="form-control" value={person.age} id="age" placeholder="Enter age" onChange={handleChange} />
                 </div>
-                <div className="form-group">
+                <div>
                     <label htmlFor="fullname">Fullname:</label>
                     <input type="text" className="form-control" value={person.fullname} id="fullname" placeholder="Enter fullname" onChange={handleChange} />
                 </div>
-                <div className="form-group">
+                <div>
                     <label htmlFor="gender">Gender:</label>
                     <select className="form-control" value={person.gender} id="gender" onChange={handleChange}>
                         <option value="" disabled hidden>Select Gender</option>
@@ -47,14 +47,17 @@ const PersonInputForm = ({updated, setUpdated, person, setPerson}) => {
                         <option value="Nonbinary">Nonbinary</option>
                     </select>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                <div>
+                    <label htmlFor="email">Email:</label> 
                     <input type="text" className="form-control" value={person.email} id="email" placeholder="Enter email" onChange={handleChange} />
                 </div>
-                <button type="submit" className="btn btn-primary">{isEditing ? 'Edit person' : 'Add person'}</button>
+                <button type="submit" className="btn btn-primary mt-2">{isEditing ? 'Edit person' : 'Add person'}</button>
             </form>
         </div>
     );
 };
 
+{/*mt-2 er med til at sætte spacing foroven*/}
+{/*form-control sørger for pæne indput bokse*/}
+{/*btn btn-primary sørger for en pæn knap*/}
 export default PersonInputForm

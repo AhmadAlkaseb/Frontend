@@ -18,20 +18,18 @@ const PersonSearch = () => {
             setSearchResult(data);
         })
         .catch(error => {
-            setSearchResult('No person found');
+            setSearchResult('No person found. ', error);
         });
 };
 
 
 return (
+    <div>
+    <h3>Search for a person by ID</h3>
     <div className="row justify-content-center">
-        {/* Sets the whole content in the center */}
         <div>
-            <h3 className="text-left mb-4">Search for a person by ID</h3>
-            {/* Aligns the text in the center and adds bottom margin */}
             <form>
                 <div className="input-group">
-                    {/* Sets input button to the right of the input field */}
                     <input
                         type="text"
                         className="form-control"
@@ -45,7 +43,6 @@ return (
                             type="button"
                             onClick={handleReadById}
                         >
-                            {/* Gives the button some style */}
                             Search
                         </button>
                     </div>
@@ -69,7 +66,13 @@ return (
             ) : null}
         </div>
     </div>
+    </div>
 );
 };
+
+{/*row justify-content-center sørger for at det hele ligger i midten*/}
+{/*input-group sørger for at søgeknappen er til højre for inputfeltet*/}
+{/*form-control gør input feltene pæne*/}
+{/*btn btn-primary giver charme til knappen*/}
 
 export default PersonSearch

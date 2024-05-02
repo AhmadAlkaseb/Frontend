@@ -18,23 +18,19 @@ function PersonListApp() {
 
   return (
     <div className="container mt-4 mb-4">
-        {/* Sets everything nicely in a container with top and bottom margin */}
-        <h1 className="row justify-content-center">Welcome to the database of persons in DK</h1>
-        {/* Sets the heading in the center */}
-        <div className="row justify-content-center mt-4 mb-4">
-            {/* Adds margin above and below the component */}
+
             <PersonSearch />
-        </div>
-        <div className="row justify-content-center mt-4 mb-4">
-            {/* Adds margin above and below the component */}
+            <p></p>
+            <hr></hr>
+
             <PersonInputForm updated={updated} setUpdated={setUpdated} person={person} setPerson={setPerson} />
-        </div>
-        <div className="row justify-content-center mt-4 mb-4">
-            {/* Adds margin above and below the component */}
-            <PersonList updated={updated} setUpdated={setUpdated} person={person} setPerson={setPerson} handleUpdatePerson={handleUpdatePerson} />
-        </div>
+            <hr></hr>
+
+        <PersonList updated={updated} setUpdated={setUpdated} person={person} setPerson={setPerson} handleUpdatePerson={handleUpdatePerson} />
     </div>
 );
 }
 
+{/*container mt-4 mb-4 sørger for at der er margin på toppen og bunden*/}
+{/*row justify-content-center sørger for at elementtet er i midten*/}
 export default PersonListApp

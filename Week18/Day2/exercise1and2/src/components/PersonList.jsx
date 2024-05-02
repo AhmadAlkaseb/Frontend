@@ -22,7 +22,9 @@ const PersonList = ({updated,setUpdated, person, setPerson, handleUpdatePerson})
   };
 
   return (
+    
     <div className="row justify-content-center">
+      <h3>Table of persons</h3>
       <table className="table">
         <thead>
           <tr>
@@ -52,5 +54,10 @@ const PersonList = ({updated,setUpdated, person, setPerson, handleUpdatePerson})
     </div>
   )
 }
+
+{/*row justify-content-center sørger for at ens element er i midten*/}
+{/*table giver ens tabel charme*/}
+{/*btn btn-danger gør ens knap rød*/}
+{/*btn btn-info gør ens knap blå*/}
 
 export default PersonList
