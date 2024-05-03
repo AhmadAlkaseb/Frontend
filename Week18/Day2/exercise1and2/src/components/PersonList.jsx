@@ -33,8 +33,8 @@ const PersonList = ({updated,setUpdated, person, setPerson, handleUpdatePerson})
             <th><span style={{ color: 'green' }}>Fullname</span></th>
             <th><span style={{ color: 'blue' }}>Gender</span></th>
             <th><span style={{ color: 'lightblue' }}>Email</span></th>
-            <th><span style={{ color: 'grey' }}>Update</span></th>
             <th><span style={{ color: 'red' }}>Delete</span></th>
+            <th><span style={{ color: 'blue' }}>Update</span></th>
           </tr>
         </thead>
         <tbody>

@@ -1,13 +1,6 @@
 {
   "persons": [
     {
-      "id": "10",
-      "age": 30,
-      "fullname": "Brisa Sawayn",
-      "gender": "Nonbinary",
-      "email": "Wendell.Legros@Celestine.ca"
-    },
-    {
       "id": "12",
       "age": 92,
       "fullname": "Virgil Dooley",
@@ -18,7 +11,7 @@
       "id": "13",
       "age": 44,
       "fullname": "Jacky Wyman",
-      "gender": "Woman",
+      "gender": "Nonbinary",
       "email": "Hirthe.Lorna@yahoo.com"
     },
     {
@@ -69,13 +62,6 @@
       "fullname": "Marquis Champlin",
       "gender": "Nonbinary",
       "email": "Davis.Eula@Brycen.biz"
-    },
-    {
-      "id": "21",
-      "age": 56,
-      "fullname": "Bethany Mayer",
-      "gender": "Woman",
-      "email": "Pollich.Hollie@Price.biz"
     },
     {
       "id": "22",
