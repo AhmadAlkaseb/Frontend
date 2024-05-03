@@ -1,13 +1,6 @@
 {
   "persons": [
     {
-      "id": "12",
-      "age": "921",
-      "fullname": "Virgil DooleyA",
-      "gender": "Male",
-      "email": "Cristian_Cummings@Selena.orgA"
-    },
-    {
       "id": "13",
       "age": 44,
       "fullname": "Jacky Wyman",
