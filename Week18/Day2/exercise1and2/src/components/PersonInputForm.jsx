@@ -12,7 +12,7 @@ const PersonInputForm = ({updated, setUpdated, person, setPerson}) => {
         event.preventDefault();
         const url = isEditing ? `http://localhost:3001/persons/${person.id}` : 'http://localhost:3001/persons';
 
-        fetch(url, {
+        fetch(url, {´´
             method: isEditing ? 'PUT' : 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ const PersonInputForm = ({updated, setUpdated, person, setPerson}) => {
             .then(() => {
                 setUpdated(!updated);
                 setPerson({ age: '', fullname: '', gender: '', email: '' });
-            });
+            }   );
     };
 
     return (
