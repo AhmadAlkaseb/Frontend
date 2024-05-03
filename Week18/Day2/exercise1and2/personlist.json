@@ -2,23 +2,23 @@
   "persons": [
     {
       "id": "12",
-      "age": 92,
-      "fullname": "Virgil Dooley",
-      "gender": "Woman",
-      "email": "Cristian_Cummings@Selena.org"
+      "age": "921",
+      "fullname": "Virgil DooleyA",
+      "gender": "Male",
+      "email": "Cristian_Cummings@Selena.orgA"
     },
     {
       "id": "13",
       "age": 44,
       "fullname": "Jacky Wyman",
-      "gender": "Nonbinary",
+      "gender": "Male",
       "email": "Hirthe.Lorna@yahoo.com"
     },
     {
       "id": "14",
       "age": 79,
       "fullname": "Dolly McGlynn",
-      "gender": "Woman",
+      "gender": "Male",
       "email": "Beier.Amber@Veum.biz"
     },
     {

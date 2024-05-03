@@ -43,7 +43,7 @@ const PersonInputForm = ({updated, setUpdated, person, setPerson}) => {
                     <select className="form-control" value={person.gender} id="gender" onChange={handleChange}>
                         <option value="" disabled hidden>Select Gender</option>
                         <option value="Male">Male</option>
-                        <option value="Female">Female</option>
+                        <option value="Woman">Woman</option>
                         <option value="Nonbinary">Nonbinary</option>
                     </select>
                 </div>

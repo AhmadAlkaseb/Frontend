@@ -31,6 +31,9 @@ console.log(JSON.stringify(db));
 // npm install --save-dev casual json-server
 
 // Vigtige commands
-// node >> filnavn.json
+// node mockdata.js >> filnavn.json
 // npm run mockserver
+
+
+// BRUGES IKKE LÆNGERE
 // npm install bootstrap@5.3.3
