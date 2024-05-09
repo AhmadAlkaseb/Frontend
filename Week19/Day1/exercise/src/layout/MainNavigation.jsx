@@ -7,6 +7,7 @@ function MainNavigation() {
             <ul>
                 <li><NavLink to="/home">Home</NavLink></li>
                 <li><NavLink to="/hotels">See available hotels</NavLink></li>
+                <li><NavLink to="/login">Login</NavLink></li>
             </ul>
         </>
     );
