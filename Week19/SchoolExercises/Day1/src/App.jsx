@@ -28,15 +28,34 @@ function Post(){
 function App() {
   return (
     <>
+
+    {/*Bruges til multi page websites */}
+    <a href="/contact">
+  <p>Contact</p>
+</a>
+
+
+
+<hr></hr>
+
+
+
+
+
+
+
+{/*Bruges til single page websites */}
+{/*Installering af react-router: npm i install react-router-dom@version */}
       <BrowserRouter>
         <Routes>
+          
           <Route element={<AppLayout/>}>
 
           <Route index element={<Navigate to="home"/>}/>
           <Route path="/home" element={<p>Home</p>} />
           <Route path="/about" element={<p>About</p>} />
-          <Route path="/contact" element={<p>Contact</p>} />
-
+          <Route path="/contact" element={<p>About</p>} />
+          
           {/* Nested routes */}
           <Route path="/posts" element={<Posts />}>
             <Route index element={<p>New Posts</p>} />
