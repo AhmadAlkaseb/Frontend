@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import {PRODUCTION_API_BASE_URL} from "../../utils/globalVariables.js";
+import React, {useEffect, useState} from 'react';
+import { LOCAL_API_BASE_URL } from "../../utils/globalVariables.js";
+import { useNavigate } from "react-router-dom";
 
-export function Login() {
+export function Login({setLoggedIn}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate(); // Hook for navigation
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
@@ -17,7 +20,7 @@ export function Login() {
         event.preventDefault();
 
         try {
-            const response = await fetch(`${PRODUCTION_API_BASE_URL}/auth/login`, {
+            const response = await fetch(`${LOCAL_API_BASE_URL}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,7 +30,16 @@ export function Login() {
 
             if (response.ok) {
                 // Login successful
+                const responseData = await response.json(); // Parse response JSON
                 console.log('Logged in successfully');
+                console.log('Response:', responseData); // Log response data
+
+                // Save data to localStorage
+                localStorage.setItem('token', responseData.token);
+                localStorage.setItem('username', responseData.username);
+                localStorage.setItem('roles', JSON.stringify(responseData.roles));
+                setLoggedIn(true);
+                navigate('/loggedin'); // Navigate to the loggedin page
             } else {
                 // Login failed
                 console.error('Login failed');

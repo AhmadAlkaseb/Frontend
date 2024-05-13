@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
-import {PRODUCTION_API_BASE_URL} from "../../utils/globalVariables.js";
+import {LOCAL_API_BASE_URL} from "../../utils/globalVariables.js";
 
 export function Hotels() {
     const [hotels, setHotels] = useState([]);
 
     useEffect(() => {
-        fetch(`${PRODUCTION_API_BASE_URL}/hotels`)
+        fetch(`${LOCAL_API_BASE_URL}/hotels`)
             .then(response => response.json())
             .then(data => setHotels(data))
     }, [])
